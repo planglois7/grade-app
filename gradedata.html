@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grade Distributions</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="gradedata.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+	<script type="text/javascript" src="gradedata.js"></script>
+	
+</head>
+
+<body>
+	
+	<header class="container">
+		<div class="row text-center">
+			<h2>Grade Data Web App</h2>
+		</div>
+	</header>
+
+	<section class="jumbotron">
+		<div class="container">
+			<div class="row text-center" id="calc">
+			<p>Select Year:</p>
+							<select id="year" form="form">
+						
+						<option value="2013">2013</option>
+						<option value="2014">2014</option>
+						<option value="2015">2015</option>
+						<option value="2016">2016</option>
+						</select></br></br>
+
+						<p>Select Subject Code:</p>
+							<select id="subject" form="form">
+						
+						<option value="AA">AA</option>
+						<option value="AAA">AAA</option>
+						<option value="AAAP">AAAP</option>
+						<option value="AAD">AAD</option>
+						<option value="ACTG">ACTG</option>
+						<option value="AEIS">AEIS</option>
+						<option value="AFR">AFR</option>
+						<option value="AIM">AIM</option>
+						<option value="ANTH">ANTH</option>
+						<option value="ARB">ARB</option>
+						<option value="ARCH">ARCH</option>
+						<option value="ARH">ARH</option>
+						<option value="ART">ART</option>
+						<option value="ARTC">ARTC</option>
+						<option value="ARTD">ARTD</option>
+						<option value="ARTF">ARTF</option>
+						<option value="ARTM">ARTM</option>
+						<option value="ARTO">ARTO</option>
+						<option value="ARTP">ARTP</option>
+						<option value="ARTR">ARTR</option>
+						<option value="ARTS">ARTS</option>
+						<option value="ASIA">ASIA</option>
+						<option value="ASL">ASL</option>
+						<option value="ASTR">ASTR</option>
+						<option value="BA">BA</option>
+						<option value="BE">BE</option>
+						<option value="BI">BI</option>
+						<option value="CAS">CAS</option>
+						<option value="CDS">CDS</option>
+						<option value="CFT">CFT</option>
+						<option value="CH">CH</option>
+						<option value="CHN">CHN</option>
+						<option value="CINE">CINE</option>
+						<option value="CIS">CIS</option>
+						<option value="CIT">CIT</option>
+						<option value="CLAS">CLAS</option>
+						<option value="COLT">COLT</option>
+						<option value="CPSY">CPSY</option>
+						<option value="CRES">CRES</option>
+						<option value="CRWR">CRWR</option>
+						<option value="DAN">DAN</option>
+						<option value="DANC">DANC</option>
+						<option value="DSC">DSC</option>
+						<option value="EALL">EALL</option>
+						<option value="EC">EC</option>
+						<option value="EDLD">EDLD</option>
+						<option value="EDST">EDST</option>
+						<option value="EDUC">EDUC</option>
+						<option value="ENG">ENG</option>
+						<option value="ENVS">ENVS</option>
+						<option value="ES">ES</option>
+						<option value="EURO">EURO</option>
+						<option value="FHS">FHS</option>
+						<option value="FIN">FIN</option>
+						<option value="FLR">FLR</option>
+						<option value="FR">FR</option>
+						<option value="GEOG">GEOG</option>
+						<option value="GEOL">GEOL</option>
+						<option value="GER">GER</option>
+						<option value="GRK">GRK</option>
+						<option value="HBRW">HBRW</option>
+						<option value="HC">HC</option>
+						<option value="HIST">HIST</option>
+						<option value="HPHY">HPHY</option>
+						<option value="HUM">HUM</option>
+						<option value="IARC">IARC</option>
+						<option value="INTL">INTL</option>
+						<option value="IST">IST</option>
+						<option value="ITAL">ITAL</option>
+						<option value="J">J</option>
+						<option value="JC">JC</option>
+						<option value="JDST">JDST</option>
+						<option value="JPN">JPN</option>
+						<option value="KRN">KRN</option>
+						<option value="LA">LA</option>
+						<option value="LAS">LAS</option>
+						<option value="LAT">LAT</option>
+						<option value="LAW">LAW</option>
+						<option value="LERC">LERC</option>
+						<option value="LIB">LIB</option>
+						<option value="LING">LING</option>
+						<option value="LT">LT</option>
+						<option value="MATH">MATH</option>
+						<option value="MDVL">MDVL</option>
+						<option value="MGMT">MGMT</option>
+						<option value="MIL">MIL</option>
+						<option value="MKTG">MKTG</option>
+						<option value="MUE">MUE</option>
+						<option value="MUJ">MUJ</option>
+						<option value="MUP">MUP</option>
+						<option value="MUS">MUS</option>
+						<option value="OAKI">OAKI</option>
+						<option value="OANG">OANG</option>
+						<option value="OANU">OANU</option>
+						<option value="OATH">OATH</option>
+						<option value="OBA">OBA</option>
+						<option value="OBIK">OBIK</option>
+						<option value="OBLN">OBLN</option>
+						<option value="OBRI">OBRI</option>
+						<option value="OBRT">OBRT</option>
+						<option value="OBWU">OBWU</option>
+						<option value="OCAM">OCAM</option>
+						<option value="OCBS">OCBS</option>
+						<option value="OCFP">OCFP</option>
+						<option value="OCHA">OCHA</option>
+						<option value="OCIE">OCIE</option>
+						<option value="OCUB">OCUB</option>
+						<option value="OCUR">OCUR</option>
+						<option value="ODEA">ODEA</option>
+						<option value="ODIS">ODIS</option>
+						<option value="ODUB">ODUB</option>
+						<option value="OESL">OESL</option>
+						<option value="OEWH">OEWH</option>
+						<option value="OFAC">OFAC</option>
+						<option value="OFES">OFES</option>
+						<option value="OFIB">OFIB</option>
+						<option value="OGAL">OGAL</option>
+						<option value="OGHA">OGHA</option>
+						<option value="OHAR">OHAR</option>
+						<option value="OHAU">OHAU</option>
+						<option value="OHKU">OHKU</option>
+						<option value="OHOU">OHOU</option>
+						<option value="OHUJ">OHUJ</option>
+						<option value="OINT">OINT</option>
+						<option value="OJCU">OJCU</option>
+						<option value="OJIL">OJIL</option>
+						<option value="OJWU">OJWU</option>
+						<option value="OKYO">OKYO</option>
+						<option value="OLAT">OLAT</option>
+						<option value="OLEC">OLEC</option>
+						<option value="OLEG">OLEG</option>
+						<option value="OLEI">OLEI</option>
+						<option value="OLIS">OLIS</option>
+						<option value="OLON">OLON</option>
+						<option value="OLYO">OLYO</option>
+						<option value="OMCT">OMCT</option>
+						<option value="OMEI">OMEI</option>
+						<option value="ONEO">ONEO</option>
+						<option value="ONTU">ONTU</option>
+						<option value="ONUS">ONUS</option>
+						<option value="OOVI">OOVI</option>
+						<option value="OPAV">OPAV</option>
+						<option value="OPDG">OPDG</option>
+						<option value="OPOI">OPOI</option>
+						<option value="OQUE">OQUE</option>
+						<option value="OQUI">OQUI</option>
+						<option value="OROM">OROM</option>
+						<option value="OROS">OROS</option>
+						<option value="OSAS">OSAS</option>
+						<option value="OSCI">OSCI</option>
+						<option value="OSEG">OSEG</option>
+						<option value="OSEN">OSEN</option>
+						<option value="OSIE">OSIE</option>
+						<option value="OSIP">OSIP</option>
+						<option value="OSIT">OSIT</option>
+						<option value="OSLO">OSLO</option>
+						<option value="OSSP">OSSP</option>
+						<option value="OSTP">OSTP</option>
+						<option value="OSVL">OSVL</option>
+						<option value="OTAM">OTAM</option>
+						<option value="OUAB">OUAB</option>
+						<option value="OUDB">OUDB</option>
+						<option value="OUEA">OUEA</option>
+						<option value="OUNA">OUNA</option>
+						<option value="OUOT">OUOT</option>
+						<option value="OUPP">OUPP</option>
+						<option value="OVAN">OVAN</option>
+						<option value="OVIC">OVIC</option>
+						<option value="OVIE">OVIE</option>
+						<option value="OWAS">OWAS</option>
+						<option value="OXAF">OXAF</option>
+						<option value="OXAO">OXAO</option>
+						<option value="OXEU">OXEU</option>
+						<option value="OXFA">OXFA</option>
+						<option value="OXGL">OXGL</option>
+						<option value="OXLA">OXLA</option>
+						<option value="OYON">OYON</option>
+						<option value="PD">PD</option>
+						<option value="PEAE">PEAE</option>
+						<option value="PEAQ">PEAQ</option>
+						<option value="PEAS">PEAS</option>
+						<option value="PEF">PEF</option>
+						<option value="PEI">PEI</option>
+						<option value="PEIA">PEIA</option>
+						<option value="PEL">PEL</option>
+						<option value="PEMA">PEMA</option>
+						<option value="PEMB">PEMB</option>
+						<option value="PEO">PEO</option>
+						<option value="PEOL">PEOL</option>
+						<option value="PEOW">PEOW</option>
+						<option value="PERS">PERS</option>
+						<option value="PERU">PERU</option>
+						<option value="PETS">PETS</option>
+						<option value="PEW">PEW</option>
+						<option value="PHIL">PHIL</option>
+						<option value="PHYS">PHYS</option>
+						<option value="PORT">PORT</option>
+						<option value="PPPM">PPPM</option>
+						<option value="PS">PS</option>
+						<option value="PSY">PSY</option>
+						<option value="REES">REES</option>
+						<option value="REL">REL</option>
+						<option value="RL">RL</option>
+						<option value="RUSS">RUSS</option>
+						<option value="SAPP">SAPP</option>
+						<option value="SBUS">SBUS</option>
+						<option value="SCAN">SCAN</option>
+						<option value="SOC">SOC</option>
+						<option value="SPAN">SPAN</option>
+						<option value="SPD">SPD</option>
+						<option value="SPED">SPED</option>
+						<option value="SPSY">SPSY</option>
+						<option value="SWAH">SWAH</option>
+						<option value="SWED">SWED</option>
+						<option value="TA">TA</option>
+						<option value="TLC">TLC</option>
+						<option value="WGS">WGS</option>
+						<option value="WR">WR</option>
+							</select></br></br>
+						
+						<p>Enter Course Number:</p>
+						<input type="text" id="courseNum" required placeholder="101">
+							 
+						</br></br>
+						
+						<div>
+							<button id="button1" type="Submit">Submit</button>
+						</div>
+						<br>
+
+						
+						<div id="grade_results" style="padding-bottom:10%; padding-top: 10%; background: white;border-bottom-right-radius: 15px;border-bottom-left-radius: 15px;">
+      						<div style="color: black;" id="results"></div>
+    					</div>
+
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		var myButton = document.getElementById("button1");
+		myButton.addEventListener("click", calculate);
+	</script>
+	
+	
+</body>
+
+</html>

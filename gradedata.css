@@ -1,0 +1,58 @@
+
+header h1{
+	color: #000000;
+	font-family: 'Exo', sans-serif;
+	font-size:70px;
+	font-weight:bold;
+}
+div{
+	
+
+}
+
+.jumbotron{
+	/*background-image:url("Pencil_Body.png");*/
+	background-image:contain;
+	opacity:.7;
+	background-color:#000000;
+	
+	font-family: 'Exo', sans-serif;
+	
+	font-size: 20px;
+}
+
+.jumbotron label{
+	
+	
+}
+
+ #calc{
+	background-color:#000000;
+	/*opacity:.99;*/
+	margin-left: 100px;
+	margin-right: 100px;
+	padding-top: 20px;
+	border-radius: 15px;
+	color: #ffffff;
+}
+
+.jumbotron select{
+	color: #000000;
+	opacity:1;
+	
+}
+
+.jumbotron input{
+	color:#000000;
+	opacity:1;
+	
+}
+
+.jumbotron button{
+	color:#000000;
+	opacity:1;
+
+}
+.grade_results{
+	
+}
